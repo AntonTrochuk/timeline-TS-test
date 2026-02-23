@@ -1,0 +1,46 @@
+@use "../common/variables.scss" as *;
+@use "../common/mixins" as *;
+
+.range {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  justify-content: center;
+  position: absolute;
+  top: 400px;
+  left: 49%;
+  transform: translateX( -50%);
+  margin: 0;
+  z-index: -1;
+
+  @media (max-width: $mobile-width) {
+    gap: 28px;
+    top: 163px;
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+.range__year {
+  font-family: $basic-font;
+  font-weight: 700;
+  font-size: 200px;
+  line-height: 160px;
+  letter-spacing: 0;
+  position: relative;
+  display: inline-block;
+
+  @media (max-width: $mobile-width) {
+    font-size: 56px;
+    letter-spacing: -2%;
+    line-height: 73px;
+  }
+
+  &--start {
+    color: #5D5FEF;
+  }
+
+  &--end {
+    color: #EF5DA8;
+  }
+}

@@ -1,0 +1,52 @@
+@use "../common/variables.scss" as *;
+
+@mixin font-face($name, $weight, $style, $url) {
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$url}.woff2') format('woff2'),
+         url('#{$url}.woff') format('woff');
+    font-display: swap;
+  }
+}
+
+@mixin hover-logo{
+  @media not (max-width: $tablet-width) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@mixin hover-header($bg-color) {
+  @media not (max-width: $tablet-width) {
+    &:hover,
+    &:active,
+    &:focus-visible {
+      color: $bg-color;
+    }
+  }
+}
+
+@mixin directions-hover($bg-color) {
+  @media not (max-width: $tablet-width) {
+    &:hover {
+      background-color: $bg-color;
+
+      .directions__header-title,
+      .directions__footer-text {
+        color: $color-text-white;
+      }
+    }
+  }
+}
+
+@mixin hover-footer {
+  @media not (max-width: $tablet-width) {
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+  }
+}

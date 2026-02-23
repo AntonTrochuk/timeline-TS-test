@@ -1,0 +1,5 @@
+@use "./mixins" as *;
+
+@include font-face("PTSans", 400, normal, "../fonts/PTSans400");
+@include font-face("PTSans", 700, normal, "../fonts/PTSans700");
+@include font-face("BebasNeue", 400, normal, "../fonts/BebasNeue400");

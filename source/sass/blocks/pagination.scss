@@ -1,0 +1,29 @@
+@use "../common/variables.scss" as *;
+@use "../common/mixins" as *;
+
+.pagination {
+  display: none;
+  gap: 10px;
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: $mobile-width) {
+    display: flex;
+  }
+}
+
+.pagination__button {
+  width: 6px;
+  height: 6px;
+  border-color: transparent;
+  border-radius: 50%;
+  padding: 0;
+  background-color: rgb(66, 86, 122, 0.4);
+  cursor: pointer;
+
+  &--active {
+    background-color: #42567A;
+  }
+}

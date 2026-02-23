@@ -1,0 +1,76 @@
+include ../mixins/mixins.pug
+
+- const descriptions = ['Наука', 'Кино', 'Литература', 'Театр', 'Технологии', 'Наука'];
+
+section.main-container__timeline.timeline
+  div.timeline__container
+    h1 Исторические даты
+    div.timeline__range.range
+      span.range__year.range__year--start 2015
+      span.range__year.range__year--end 2022
+    div.timeline__mobile-description.mobile-description
+      span.mobile-description__text= descriptions[5]
+    div.timeline__circle.circle
+      div.circle__section
+        each val, index in [6,5,4,3,2,1]
+          button.circle__button(
+            id= val,
+            data-index=index,
+            class=(val === 6 ? 'circle__button--active' : '')
+          )
+            span= val
+            span.circle__button-label(
+              class=(val === 6 ? 'circle__button-label--visible' : '')
+            )= descriptions[val-1]
+    div.timeline__btn-block.btn-block
+      div.btn-block__text-block
+        span.btn-block__text.btn-block__text--start 06
+        span.btn-block__text /
+        span.btn-block__text.btn-block__text--end 06
+      div.btn-block__switch-block
+        button.btn-block__switch.btn-block__switch--prev
+          svg
+            use(href="/img/sprite.svg#switch_arrow")
+        button.btn-block__switch.btn-block__switch--next
+          svg
+            use(href="/img/sprite.svg#switch_arrow")
+    div.timeline__date-description.date-description
+      div.date-description__container.description-swiper
+        ul.date-description__list.swiper-wrapper
+          li.date-description__item.swiper-slide
+            div.date-description__item-content
+              h2 2015
+              p 13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды.
+          li.date-description__item.swiper-slide
+            div.date-description__item-content
+              h2 2016
+              p Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11.
+          li.date-description__item.swiper-slide
+            div.date-description__item-content
+              h2 2017
+              p Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi.
+          li.date-description__item.swiper-slide
+            div.date-description__item-content
+              h2 2018
+              p Старт космического аппарата Solar Probe Plus, предназаначенного для исследования Солнца.
+          li.date-description__item.swiper-slide
+            div.date-description__item-content
+              h2 2019
+              p Google объявил о создании 53-кубитного квантового компьютера.
+          li.date-description__item.swiper-slide
+            div.date-description__item-content
+              h2 2020
+              p Корабль Crew Dragon вернулся на Землю из первого пилотируемого полёта.
+      div.date-description__button-blok
+        button.date-description__button.date-description__button--prev.swiper-button-prev
+          svg
+            use(href="/img/sprite.svg#button_arrow")
+        button.date-description__button.date-description__button--next.swiper-button-next
+          svg
+            use(href="/img/sprite.svg#button_arrow")
+    div.timeline__pagination.pagination
+      each val, pagination in [1,2,3,4,5,6]
+        button.pagination__button(
+          id= val,
+          data-pagination=pagination
+        )

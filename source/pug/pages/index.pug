@@ -1,0 +1,13 @@
+extends ../layouts/default.pug
+
+block vars
+  - var isHomePage = true
+  - var title = "Главная"
+
+block header
+
+block content
+  main.main-container
+    include ../components/blocks/timeline.pug
+
+block footer

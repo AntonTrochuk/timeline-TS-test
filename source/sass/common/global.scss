@@ -1,0 +1,17 @@
+@use "../common/variables.scss" as *;
+@use "../common/mixins" as *;
+
+body {
+  margin: 0;
+  background-color: $color-background-fonpage;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  list-style: none;
+}

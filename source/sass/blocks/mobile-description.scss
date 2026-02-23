@@ -1,0 +1,19 @@
+@use "../common/variables.scss" as *;
+@use "../common/mixins" as *;
+
+.mobile-description {
+  position: absolute;
+  top: 260px;
+  display: none;
+
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
+}
+
+.mobile-description__text {
+  font-family: $basic-font;
+  font-weight: 700;
+  font-size: 16px;
+  color: #42567A;
+}
